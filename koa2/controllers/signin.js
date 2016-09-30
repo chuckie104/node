@@ -6,9 +6,7 @@ var signin = async (ctx,next)=>{
       email = ctx.request.body.email ||"",
       password= ctx.request.body.password || "";
 
-      var object =await selectUser(email);
-
-
+      var object =await selectUser.select(email);
 
       if(email ==object[0].email && password ==object[0].password){
         var name = object[0].username || "new user";

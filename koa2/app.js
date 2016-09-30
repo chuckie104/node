@@ -38,6 +38,7 @@ app.use(templating('view', {
     watch: !isProduction
 }));
 
+//第五个执行控制器路由分发
 app.use(controller());
 
 

@@ -39,4 +39,18 @@ var selectUser = async (name) =>{
     return pets;
 }
 
-module.exports=selectUser;
+var insertSql=async (email,password,username)=>{
+  console.log(email+".."+password+".."+username);
+    var user= await Pet.create({
+        email:email,
+        password:password,
+        username:username
+    });
+
+    return true;
+}
+
+module.exports={
+  insert:insertSql,
+  select:selectUser,
+}
